@@ -14,26 +14,26 @@ pub mod bricks {
     use super::*;
 
     // Setup Config
-    // pub fn initialize_protocol(ctx: Context<ProtocolInit>) -> Result<()> {
-    //     instructions::initialize_protocol::handler(ctx)
-    // }
+    pub fn initialize_protocol(ctx: Context<ProtocolInit>) -> Result<()> {
+        instructions::initialize_protocol::handler(ctx)
+    }
 
-    // pub fn update_protocol(ctx: Context<UpdateProtocol>) -> Result<()> {
-    //     instructions::update_protocol::handler(ctx)
-    // }
+    pub fn update_protocol(ctx: Context<UpdateProtocol>) -> Result<()> {
+        instructions::update_protocol::handler(ctx)
+    }
 
-    // pub fn initialize_admin(ctx: Context<AdminInit>, args: AdminInitArgs) -> Result<()> {
-    //     instructions::initialize_admin::handler(ctx, args)
-    // }
+    pub fn initialize_admin(ctx: Context<AdminInit>, args: AdminInitArgs) -> Result<()> {
+        instructions::initialize_admin::handler(ctx, args)
+    }
 
-    // pub fn claim_fractionalized_listing_revenue(ctx: Context<ClaimFractionalizedListingRevenue>) -> Result<()> {
-    //     instructions::claim_fractionalized_listing_revenue::handler(ctx)
-    // }
+    pub fn claim_fractionalized_listing_revenue(ctx: Context<ClaimFractionalizedListingRevenue>) -> Result<()> {
+        instructions::claim_fractionalized_listing_revenue::handler(ctx)
+    }
 
     // // Profile Config
-    // pub fn initialize_profile(ctx: Context<ProfileInit>, args: ProfileInitArgs) -> Result<()> {
-    //     instructions::initialize_profile::handler(ctx, args)
-    // }
+    pub fn initialize_profile(ctx: Context<ProfileInit>, args: ProfileInitArgs) -> Result<()> {
+        instructions::initialize_profile::handler(ctx, args)
+    }
 
     // // Objects Initialization
     // pub fn create_object(ctx: Context<CreateObject>, args: CreateObjectArgs) -> Result<()> {
