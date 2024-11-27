@@ -62,9 +62,25 @@ pub enum ObjectType {
 }
 
 #[account]
+pub struct FractionalizedListing {
+    pub id: u64,
+    pub object_type: ObjectType,
+    pub object: Pubkey,
+    pub share: u16,
+    pub share_sold: u16,
+    pub price: u64,
+    pub starting_time: i64,
+    pub bump: u8,
+}
+
+impl Space for FractionalizedListing {
+    const INIT_SPACE: usize = 8 + 8 + ObjectType::INIT_SPACE + 32 + 2 + 2 + 8 + 8 + 1;
+}
+
+#[account]
 pub struct FractionalizedCompletedListing {
-    pub id: u64, // 8
-    pub object_type: ObjectType, // 2
+    pub id: u64,
+    pub object_type: ObjectType, 
     pub object: Pubkey, // 32 -- offset 18
     pub share: u16,
     pub price: u64,

@@ -4,8 +4,8 @@ pub use setup::*;
 pub mod profile;
 pub use profile::*;
 
-// pub mod objects;
-// pub use objects::*;
+pub mod objects;
+pub use objects::*;
 
-// pub mod actions;
-// pub use actions::*;
+pub mod actions;
+pub use actions::*;

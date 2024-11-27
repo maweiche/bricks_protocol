@@ -36,17 +36,17 @@ pub mod bricks {
     }
 
     // // Objects Initialization
-    // pub fn create_object(ctx: Context<CreateObject>, args: CreateObjectArgs) -> Result<()> {
-    //     instructions::create_object::handler(ctx, args)
-    // }
+    pub fn create_object(ctx: Context<CreateObject>, args: CreateObjectArgs) -> Result<()> {
+        instructions::create_object::handler(ctx, args)
+    }
     
     // // Actions
-    // pub fn create_fractionalized_listing(ctx: Context<CreateFractionalizedListing>, args: CreateFractionalizedListingArgs) -> Result<()> {
-    //     instructions::create_fractionalized_listing::handler(ctx, args)
-    // }
+    pub fn create_fractionalized_listing(ctx: Context<CreateFractionalizedListing>, args: CreateFractionalizedListingArgs) -> Result<()> {
+        instructions::create_fractionalized_listing::handler(ctx, args)
+    }
 
-    // pub fn buy_fractionalized_listing(ctx: Context<BuyFractionalizedListing>, uri: String) -> Result<()> {
-    //     instructions::buy_fractionalized_listing::handler(ctx, uri)
-    // }
+    pub fn buy_fractionalized_listing(ctx: Context<BuyFractionalizedListing>, uri: String) -> Result<()> {
+        instructions::buy_fractionalized_listing::handler(ctx, uri)
+    }
 
 }
