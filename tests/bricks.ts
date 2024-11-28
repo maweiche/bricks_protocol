@@ -16,18 +16,18 @@ describe("bricks", () => {
 
   /////-- INITIALIZATION --////////
   ////---- ONLY RUN ONCE ----/////
-  // it("Initialize Protocol", async () => {
-  //   console.log('init protocol')
-  //   await program.methods.initializeProtocol()
-  //   .accountsPartial({  
-  //     owner: wallet.publicKey,    
-  //     protocol,
-  //     manager,
-  //     systemProgram: anchor.web3.SystemProgram.programId,
-  //   })
-  //   .signers([wallet.payer])
-  //   .rpc();
-  // });
+  it("Initialize Protocol", async () => {
+    console.log('init protocol')
+    await program.methods.initializeProtocol()
+    .accountsPartial({  
+      owner: wallet.publicKey,    
+      protocol,
+      manager,
+      systemProgram: anchor.web3.SystemProgram.programId,
+    })
+    .signers([wallet.payer])
+    .rpc();
+  });
 
   const adminProfile = PublicKey.findProgramAddressSync([Buffer.from("admin"), wallet.publicKey.toBuffer()], program.programId)[0];
   const adminArgs = {
@@ -49,36 +49,36 @@ describe("bricks", () => {
 
   /////-- LOCKS PROTOCOL --////////
   ////---- RENDERS PROTOCOL INOPERABLE ----/////
-  // it("Update Protocol", async () => {
-  //   await program.methods.updateProtocol()
-  //   .accountsPartial({  
-  //     owner: wallet.publicKey,    
-  //     protocol,
-  //     systemProgram: anchor.web3.SystemProgram.programId,
-  //   })
-  //   .signers([wallet.payer])
-  //   .rpc();
-  // });
+  it("Update Protocol", async () => {
+    await program.methods.updateProtocol()
+    .accountsPartial({  
+      owner: wallet.publicKey,    
+      protocol,
+      systemProgram: anchor.web3.SystemProgram.programId,
+    })
+    .signers([wallet.payer])
+    .rpc();
+  });
 
-  const profile = PublicKey.findProgramAddressSync([Buffer.from("profile"), wallet.publicKey.toBuffer()], program.programId)[0];
+  const profile = PublicKey.findProgramAddressSync([Buffer.from("profile"), _newAdmin.toBuffer()], program.programId)[0];
   const profileArgs = {
-    username: "Matt"
+    username: "MW"
   }
 
   ////-- CREATE NEW PROFILE --//////
   ////---- USER MUST HAVE A PROFILE ----/////
   ////---- TO PURCHASE BRICKS ----/////
-  // it("Initialize Profile", async () => {
-  //   await program.methods.initializeProfile(profileArgs)
-  //   .accountsPartial({
-  //     user: wallet.publicKey,  
-  //     payer: wallet.publicKey,    
-  //     profile,
-  //     systemProgram: anchor.web3.SystemProgram.programId,
-  //   })
-  //   .signers([wallet.payer])
-  //   .rpc();
-  // });
+  it("Initialize Profile", async () => {
+    await program.methods.initializeProfile(profileArgs)
+    .accountsPartial({
+      user: _newAdmin,  
+      payer: wallet.publicKey,    
+      profile,
+      systemProgram: anchor.web3.SystemProgram.programId,
+    })
+    .signers([wallet.payer])
+    .rpc();
+  });
 
   // HOUSE TO BE CREATED
   const createObjectArgs = {
